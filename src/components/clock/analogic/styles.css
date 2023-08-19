@@ -1,0 +1,61 @@
+.container-analogic{
+    background-color: var(--cloud-burst);
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 6px #2f3031,
+            inset 2px 2px 6px #a3a9b1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.container-analogic::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #2f3031;
+    width: 8px;
+    height: 8px;
+    background-color: bisque;
+}
+
+.clock-number {
+    position: absolute;
+    transform: rotate( calc(var(--i) * 30deg)) ;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    inset: 1%; 
+}
+
+.pointer {
+    height: 4px;
+    position: absolute;
+    transform-origin: 0;
+    border-radius: 20px;
+    display: flex;
+}
+
+.pointer.hour {
+    width: 15%;
+    background-color: var(--hour);
+    transform: translate( 50% , 0) rotate( calc( var(--i) * 1deg + 270deg));
+}
+
+.pointer.min {
+    width: 20%;
+    background-color: var(--min);
+    transform: translate( 50% , 0) rotate( calc( var(--i) * 6deg + 270deg) );
+}
+
+.pointer.sec {
+    width: 30%;
+    background-color: var(--sec);
+    transform: translate( 50% , 0) rotate( calc( var(--i) * 6deg + 270deg));
+    
+}
